@@ -1,19 +1,19 @@
 % john, cracker
 
 # Extraire le hash d'une archive .zip
-zip2john <FILE.ZIP> > target.hashes
+zip2john <FILE> > target.hashes
 
 # Extraire le hash d'une archive .rar
-rar2john <FILE.RAR> > target.hashes
+rar2john <FILE> > target.hashes
 
 # Extraire le hash d'un backup android .ab
-androidbackup2john <FILE.AB> > target.hash
+androidbackup2john <FILE> > target.hash
 
 # Extraire le hash d'une clé privée ssh
 ssh2john <FILE> > target.hash
 
 # Utiliser l'attaque par dictionnaire
-john <FILE.HASHES> --wordlist=/usr/share/wordlist/rockyou.txt
+john <FILE> --wordlist=/usr/share/wordlist/rockyou.txt
 
 # Remontrer le password trouvé
-john <FILE.HASHES> --show
+john <FILE> --show
