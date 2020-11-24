@@ -1,31 +1,31 @@
 % nmap, scanner
 
-#Ping target
+# Ping target
 nmap -sP <IP>
 
-#Ping range
+# Ping range
 nmap -sP <IP>/<RANGE>
 
-#Full scan
+# Full scan
 nmap -A <IP>
 
-#Détecte les services en écoute et leurs versions
+# Détecte les services en écoute et leurs versions
 nmap -sV <IP>
 
-#Scan plage de ports
+# Scan plage de ports
 nmap -p<FIRST_PORT>-<LAST_PORT> <IP>
 
-#Scan UDP
+# Scan UDP
 nmap -sU <IP>
 
-#Détecte OS 
+# Détecte OS 
 nmap -O <IP>
 
-#IPv6
+# IPv6
 nmap -6 <IP>
 
-#Choix d'une politique de temporisation
+# Choix d'une politique de temporisation
 nmap -T[0-5] <IP>
 
-#Verbeux
+# Verbeux
 nmap -vv <IP>
