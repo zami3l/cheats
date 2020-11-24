@@ -13,7 +13,9 @@ androidbackup2john <FILE> > target.hash
 ssh2john <FILE> > target.hash
 
 # Utiliser l'attaque par dictionnaire
-john <FILE> --wordlist=/usr/share/wordlist/rockyou.txt
+john <FILE> --wordlist=<WORDLIST>
 
 # Remontrer le password trouvé
 john <FILE> --show
+
+$ WORDLIST: ls /usr/share/wordlist
