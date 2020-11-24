@@ -1,9 +1,11 @@
 % postgresql, services
 
 # Start/Stop/Status PostgreSQL
-sudo -iu postgres pg_ctl <Cmd> -D /data/postgresql
+sudo -iu postgres pg_ctl <ETAT> -D /data/postgresql
 
 % postgresql, connexion
 
 # Connexion à PostgreSQL
 sudo -iu postgres psql -h /data/postgresql
+
+$ ETAT: echo "start,stop,status" | tr ',' '\n'
