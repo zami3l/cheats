@@ -1,0 +1,4 @@
+% fcrackzip, cracker
+
+# Wordlist (-D Attaque par dictionnaire, -p Fichier pour l'attaque par dictionnaire)
+fcrackzip  -D  -p /usr/share/wordlist/rockyou.txt  <FILE> -v 
