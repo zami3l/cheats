@@ -1,0 +1,7 @@
+% gobuster, scanner
+
+# Recherche dossier via wordlist big
+gobuster dir -u <TARGET> -w /usr/share/dirb/wordlists/big.txt
+
+# Recherche dossier via wordlist small
+gobuster dir -u <TARGET> -w /usr/share/dirb/wordlists/small.txt
