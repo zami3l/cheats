@@ -1,0 +1,4 @@
+% python, web, http
+
+# Démarre un serveur web sur le repertoire local
+python3 -m SimpleHTTPServer <PORT>
