@@ -1,0 +1,7 @@
+% smb, client, network
+
+# Connexion partage samba
+smbclient //<IP>/<PARTAGE> -U <ID> -p <PORT>
+
+$ ID: echo "Anonymous,Administrateur,Administrator,root,admin" | tr ',' '\n'
+$ PORT: echo "139,445" | tr ',' '\n'
