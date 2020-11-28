@@ -1,0 +1,4 @@
+% telnet, network
+
+# Connexion
+telnet <IP> <PORT>
