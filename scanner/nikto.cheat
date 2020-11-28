@@ -1,4 +1,4 @@
 % nikto, scan
 
-# Recherche de répertoires
+# Rechercher les répertoires
 nikto -h <IP> -p [PORT] -id [ID:PASSWORD]

@@ -1,4 +1,4 @@
 % netcat, nc, listen
 
-# Ecoute port
+# Ecouter le port
 nc -l -p <PORT>

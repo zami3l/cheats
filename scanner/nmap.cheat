@@ -9,7 +9,7 @@ nmap -sP <IP>/<RANGE>
 # Full scan
 nmap -A <IP>
 
-# Détecte les services en écoute et leurs versions
+# Détecter les services en écoute et leurs versions
 nmap -sV <IP>
 
 # Scan plage de ports
@@ -18,7 +18,7 @@ nmap -p<FIRST_PORT>-<LAST_PORT> <IP>
 # Scan UDP
 nmap -sU <IP>
 
-# Détecte OS 
+# Détecter OS 
 nmap -O <IP>
 
 # IPv6
