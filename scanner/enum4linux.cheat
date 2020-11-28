@@ -1,0 +1,4 @@
+% enumeration, linux, scanner
+
+# Full énumération
+enum4linux -A <IP>
