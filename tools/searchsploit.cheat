@@ -1,0 +1,7 @@
+% searchsploit, tools
+
+# Rechercher un exploit
+searchsploit <NAME>
+
+# Télécharger un exploit
+searchsploit -m <ID>
