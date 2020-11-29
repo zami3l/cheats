@@ -6,4 +6,4 @@ gobuster dir -u <TARGET> -w <WORDLIST>
 # Rechercher le dossier via wordlist small
 gobuster dir -u <TARGET> -w <WORDLIST>
 
-$ WORDLIST: ls /usr/share/dirb/wordlists
+$ WORDLIST: ls ${pwd}/usr/share/dirb/wordlists/*

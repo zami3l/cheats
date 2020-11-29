@@ -19,4 +19,4 @@ john <FILE> --wordlist=<WORDLIST>
 john <FILE> --show
 
 $ FILE: ls
-$ WORDLIST: ls /usr/share/wordlist
+$ WORDLIST: ls ${pwd}/usr/share/wordlist/*
