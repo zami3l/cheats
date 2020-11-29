@@ -1,0 +1,7 @@
+% cronjobs, crontab, tools
+
+# Afficher les planifications via crontab
+crontab -l
+
+# Afficher les planifications via conf
+cat /etc/crontab
