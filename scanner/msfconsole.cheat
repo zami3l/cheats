@@ -8,7 +8,7 @@ msfconsole -qx "use auxiliary/scanner/smtp/smtp_enum; set RHOSTS <IP>; set RPORT
 
 $ PORT: echo "25," | tr ',' '\n'
 $ NB_THREAD: echo "1,2,4,8,16" | tr ',' '\n'
-$ WORDLIST: $ ls ${pwd}/usr/share/wordlist/*
+$ WORDLIST: $ ls ${pwd}/usr/share/wordlists/*
 
 % msfconsole, scanner, mysql
 @msfconsole, scanner, smtp

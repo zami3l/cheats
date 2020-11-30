@@ -4,4 +4,4 @@
 fcrackzip  -D  -p <WORDLIST> <FILE> -v 
 
 $ FILE: ls
-$ WORDLIST: ls ${pwd}/usr/share/wordlist/*
+$ WORDLIST: ls ${pwd}/usr/share/wordlists/*
