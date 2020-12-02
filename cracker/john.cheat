@@ -12,6 +12,9 @@ androidbackup2john <FILE> > <FILE>.hashes
 # Extraire le hash d'une clé privée ssh
 ssh2john <FILE> > <FILE>.hashes
 
+# Extraire fichier /etc/passwd et /etc/shadow
+unshadow <FILE_PASSWD> <FILE_SHADOW> > <FILE>.hashes
+
 # Utiliser l'attaque par dictionnaire
 john <FILE> --wordlist=<WORDLIST>
 
@@ -19,4 +22,6 @@ john <FILE> --wordlist=<WORDLIST>
 john <FILE> --show
 
 $ FILE: ls
+$ FILE_PASSWD: ls
+$ FILE_SHADOW : ls
 $ WORDLIST: ls ${pwd}/usr/share/wordlists/*
