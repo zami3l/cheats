@@ -1,0 +1,15 @@
+% encode, cracker, base64
+
+# Encode text
+echo -n '<TEXT>' | base64
+
+# Encode file
+base64 <INTPUT_FILE> > <OUTPUT_FILE>
+
+# Decode text
+echo -n '<TEXT>' | base64 -d
+
+# Decode file
+base64 -d <INTPUT_FILE> > <OUTPUT_FILE>
+
+$ INTPUT_FILE: ls
