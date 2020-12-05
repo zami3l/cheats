@@ -3,6 +3,9 @@
 # Brute force ssh, smb, ftp, mysql, vnc, postgres, telnet
 : <TYPE_LOGIN> <TYPE_PASSWORD>; hydra <OPTION_LOGIN> <LOGIN> <OPTION_PASSWORD> <PASSWORD> -t <NB_THREAD> -s <PORT> <IP> <PROTOCOL> -vV 
 
+# Brute force http https requête POST
+: <TYPE_LOGIN> <TYPE_PASSWORD>; hydra <OPTION_LOGIN> <LOGIN> <OPTION_PASSWORD> <PASSWORD> <IP> http-post-form "<LOGIN_URL>:<USER_PARAM>=^USER^&<PASSWORD_PARAM>=^PASS^:F=<MESSAGE_FAIL>" -V
+
 $ TYPE_LOGIN: echo 'LOGIN,LIST LOGIN' | tr ',' '\n'
 $ OPTION_LOGIN: if [ $TYPE_LOGIN = "LOGIN" ]; then echo '-l'; else echo '-L'; fi
 $ TYPE_PASSWORD: echo 'PASSWORD,LIST PASSWORD' | tr ',' '\n'
@@ -12,3 +15,6 @@ $ PASSWORD: if [ $TYPE_PASSWORD = "PASSWORD" ]; then echo 'root,admin' | tr ',' 
 $ NB_THREAD: echo '1,2,4,8,16' | tr ',' '\n'
 $ PORT: echo '21,22,23,139,445,3306,5432,5900' | tr ',' '\n'
 $ PROTOCOL: echo 'ftp,ssh,telnet,smb,ftp,mysql,postgres,vnc' | tr ',' '\n'
+$ LOGIN_URL: echo '/login,/login.php' | tr ',' '\n'
+$ USER_PARAM: echo 'username,' | tr ',' '\n'
+$ PASSWORD_PARAM: echo 'password,' | tr ',' '\n'
