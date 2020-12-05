@@ -1,9 +1,6 @@
 % gobuster, scanner
 
-# Rechercher le dossier via wordlist big
-gobuster dir -u <TARGET> -w <WORDLIST>
-
-# Rechercher le dossier via wordlist small
+# Rechercher les dossiers disponibles
 gobuster dir -u <TARGET> -w <WORDLIST>
 
 $ WORDLIST: ls ${pwd}/usr/share/dirb/wordlists/*
