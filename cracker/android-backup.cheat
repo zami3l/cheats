@@ -1,7 +1,8 @@
 % android, cracker
 
 # Décompiler le backup
-abe unpack <FILE_BACKUP> <FILE_OUTPUT> <PASSWORD>
+run <TYPE> abe unpack <FILE_BACKUP> <FILE_OUTPUT> <PASSWORD>
 
 $ FILE_BACKUP: ls
 $ FILE_OUTPUT: echo "unpack_backup.tar," | tr ',' '\n'
+$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'

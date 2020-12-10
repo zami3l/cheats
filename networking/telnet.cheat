@@ -1,4 +1,6 @@
 % telnet, network
 
 # Connexion
-telnet <IP> <PORT>
+run <TYPE> telnet <IP> <PORT>
+
+$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'

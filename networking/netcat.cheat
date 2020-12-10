@@ -1,4 +1,6 @@
 % netcat, nc, listen
 
 # Ecouter le port
-nc -lvnp <PORT>
+run <TYPE> nc -lvnp <PORT>
+
+$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'

@@ -1,10 +1,11 @@
 % ssh, tools
 
 # Connexion avec file
-ssh -p <PORT> -i <KEY_FILE> <LOGIN>@<IP>
+run <TYPE> ssh -p <PORT> -i <KEY_FILE> <LOGIN>@<IP>
 
 # Connexion simple
-ssh -p <PORT> <LOGIN>@<IP>
+run <TYPE> ssh -p <PORT> <LOGIN>@<IP>
 
 $ PORT: echo "22,2222" | tr ',' '\n'
 $ KEY_FILE: ls
+$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'

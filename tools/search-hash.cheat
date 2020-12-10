@@ -1,4 +1,6 @@
 % hash, search, hashid
 
 # Rechercher type de hash
-hashid '<HASH>'
+run <TYPE> hashid '<HASH>'
+
+$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'

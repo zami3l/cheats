@@ -1,7 +1,8 @@
 % fcrackzip, cracker
 
 # Wordlist (-D Attaque par dictionnaire, -p Fichier pour l'attaque par dictionnaire)
-fcrackzip  -D  -p <WORDLIST> <FILE> -v 
+run <TYPE> fcrackzip  -D  -p <WORDLIST> <FILE> -v 
 
 $ FILE: ls
 $ WORDLIST: ls ${pwd}/usr/share/wordlists/*
+$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'

@@ -1,10 +1,11 @@
 % smb, client, network
 
 # Connexion partage samba
-smbclient //<IP>/<PARTAGE> -U <LOGIN> -p <PORT>
+run <TYPE> smbclient //<IP>/<PARTAGE> -U <LOGIN> -p <PORT>
 
 # Télécharger des fichiers dans le partage samba
-smbget -R //<IP>/<PARTAGE> -U <LOGIN> -p <PORT>
+run <TYPE> smbget -R //<IP>/<PARTAGE> -U <LOGIN> -p <PORT>
 
 $ LOGIN: echo "Anonymous,Administrateur,Administrator,root,admin" | tr ',' '\n'
 $ PORT: echo "139,445" | tr ',' '\n'
+$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'

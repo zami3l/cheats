@@ -1,27 +1,28 @@
 % john, cracker
 
 # Extraire le hash d'une archive .zip
-zip2john <FILE> > <FILE>.hashes
+run <TYPE> zip2john <FILE> > <FILE>.hashes
 
 # Extraire le hash d'une archive .rar
-rar2john <FILE> > <FILE>.hashes
+run <TYPE> rar2john <FILE> > <FILE>.hashes
 
 # Extraire le hash d'un backup android .ab
-androidbackup2john <FILE> > <FILE>.hashes
+run <TYPE> androidbackup2john <FILE> > <FILE>.hashes
 
 # Extraire le hash d'une clé privée ssh
-ssh2john <FILE> > <FILE>.hashes
+run <TYPE> ssh2john <FILE> > <FILE>.hashes
 
 # Extraire fichier /etc/passwd et /etc/shadow
-unshadow <FILE_PASSWD> <FILE_SHADOW> > <FILE>.hashes
+run <TYPE> unshadow <FILE_PASSWD> <FILE_SHADOW> > <FILE>.hashes
 
 # Utiliser l'attaque par dictionnaire
-john <FILE> --wordlist=<WORDLIST>
+run <TYPE> john <FILE> --wordlist=<WORDLIST>
 
 # Remontrer le password trouvé
-john <FILE> --show
+run <TYPE> john <FILE> --show
 
 $ FILE: ls
 $ FILE_PASSWD: ls
 $ FILE_SHADOW : ls
 $ WORDLIST: ls ${pwd}/usr/share/wordlists/*
+$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'

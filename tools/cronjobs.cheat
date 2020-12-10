@@ -1,7 +1,9 @@
 % cronjobs, crontab, tools
 
 # Afficher les planifications via crontab
-crontab -l
+run <TYPE> crontab -l
 
 # Afficher les planifications via conf
-cat /etc/crontab
+run <TYPE> cat /etc/crontab
+
+$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'

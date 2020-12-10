@@ -1,4 +1,6 @@
 % nikto, scan
 
 # Rechercher les répertoires
-nikto -h <IP> -p [PORT] -id [ID:PASSWORD]
+run <TYPE> nikto -h <IP> -p <PORT> -id <USERNAME>:<PASSWORD>
+
+$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'

@@ -1,7 +1,9 @@
 % searchsploit, tools
 
 # Rechercher un exploit
-searchsploit <NAME>
+run <TYPE> searchsploit <NAME>
 
 # Télécharger un exploit
-searchsploit -m <ID>
+run <TYPE> searchsploit -m <ID>
+
+$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'

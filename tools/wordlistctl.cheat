@@ -1,7 +1,9 @@
 % wordlist, search
 
 # Rechercher une liste de mot de passe
-wordlistctl search <NAME_LIST>
+run <TYPE> wordlistctl search <NAME_LIST>
 
 # Téléchager une liste de mot de passe
-wordlistctl fetch -l <NAME_LIST>
+run <TYPE> wordlistctl fetch -l <NAME_LIST>
+
+$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'

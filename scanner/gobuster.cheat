@@ -1,6 +1,7 @@
 % gobuster, scanner
 
 # Rechercher les dossiers disponibles
-gobuster dir -u <TARGET> -w <WORDLIST>
+run <TYPE> gobuster dir -u <TARGET> -w <WORDLIST>
 
 $ WORDLIST: ls ${pwd}/usr/share/dirb/wordlists/*
+$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'

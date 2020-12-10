@@ -1,4 +1,6 @@
 % python, web, http
 
 # Démarrer un serveur web sur le repertoire local
-python3 -m http.server <PORT>
+run <TYPE> python3 -m http.server <PORT>
+
+$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'

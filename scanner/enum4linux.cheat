@@ -1,4 +1,6 @@
 % enumeration, linux, scanner
 
 # Full énumération
-enum4linux -A <IP>
+run <TYPE> enum4linux -A <IP>
+
+$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
