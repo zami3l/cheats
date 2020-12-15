@@ -3,4 +3,10 @@
 # Full énumération
 run <TYPE> enum4linux -A <IP>
 
+# Lister les partages
+run <TYPE> enum4linux -S <IP>
+
+# Lister les utilisateurs
+run <TYPE> enum4linux -U <IP>
+
 $ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
