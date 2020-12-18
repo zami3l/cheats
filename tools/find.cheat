@@ -1,0 +1,8 @@
+% find, search
+
+# Rechercher fichiers/dossiers in
+run <TYPE> find <EMPLACEMENT> -type <FILE_TYPE> -iname "<NAME_SEARCH>" 2> /dev/null
+
+$ EMPLACEMENT: echo "/,." | tr ',' '\n'
+$ FILE_TYPE: echo "f,d,*" | tr ',' '\n'
+$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
