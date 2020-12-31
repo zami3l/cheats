@@ -1,0 +1,9 @@
+% mysql, databse
+
+# Connect database mysql
+run <TYPE> mysql -u <USER> -p
+
+# Show databases
+run <TYPE> mysql -u <USER> -p <PASSWORD> -e "show databses;"
+
+$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
