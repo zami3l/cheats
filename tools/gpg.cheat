@@ -26,3 +26,12 @@ gpg --delete-key <ID_EMAIL>
 
 # Delete private key
 gpg --delete-secret-key <ID_EMAIL>
+
+# Encrypt file
+gpg --output <FILE>.gpg --encrypt --recipient <ID_EMAIL> <FILE> 
+
+# Decrypt file 
+: <FILE>; gpg --output <FILE_OUTPUT> --decrypt <FILE>
+
+$ FILE: ls
+$ FILE_OUTPUT: echo ${FILE%.*} 
