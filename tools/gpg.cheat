@@ -1,0 +1,28 @@
+% gpg
+
+# Lis tprivate key
+gpg --list-secret-keys
+
+# List public key
+gpg --list-keys
+
+# Import public key
+gpg --import <PUBLIC_KEY>
+
+# Import private key
+gpg --allow-secret-key-import --import <PRIVATE_KEY>
+
+# Export key format binaire
+gpg --export <ID_EMAIL> > <NAME_KEY>.gpg
+
+# Export key format ASCII
+gpg --armor <ID_EMAIL> > <NAME_KEY>.gpg
+
+# Edit key
+gpg --edit-key <ID_EMAIL>
+
+# Delete public key
+gpg --delete-key <ID_EMAIL>
+
+# Delete private key
+gpg --delete-secret-key <ID_EMAIL>
