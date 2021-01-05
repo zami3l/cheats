@@ -1,37 +1,40 @@
 % gpg
 
-# Lis tprivate key
-gpg --list-secret-keys
+# List private key
+run <ACTION_CMD> gpg --list-secret-keys
 
 # List public key
-gpg --list-keys
+run <ACTION_CMD> gpg --list-keys
 
 # Import public key
-gpg --import <PUBLIC_KEY>
+run <ACTION_CMD> gpg --import <FILE>
 
 # Import private key
-gpg --allow-secret-key-import --import <PRIVATE_KEY>
+run <ACTION_CMD> gpg --allow-secret-key-import --import <FILE>
 
-# Export key format binaire
-gpg --export <ID_EMAIL> > <NAME_KEY>.gpg
-
-# Export key format ASCII
-gpg --armor <ID_EMAIL> > <NAME_KEY>.gpg
+# Export key
+: <ACTION_CMD> <FORMAT_EXPORT> <TYPE_KEY>; run <ACTION_CMD> "gpg <FORMAT><TYPE> <ID_EMAIL> > <NAME_KEY>.<EXT>"
 
 # Edit key
-gpg --edit-key <ID_EMAIL>
+run <ACTION_CMD> gpg --edit-key <ID_EMAIL>
 
 # Delete public key
-gpg --delete-key <ID_EMAIL>
+run <ACTION_CMD> gpg --delete-key <ID_EMAIL>
 
 # Delete private key
-gpg --delete-secret-key <ID_EMAIL>
+run <ACTION_CMD> gpg --delete-secret-key <ID_EMAIL>
 
 # Encrypt file
-gpg --output <FILE>.gpg --encrypt --recipient <ID_EMAIL> <FILE> 
+run <ACTION_CMD> gpg --output <FILE>.gpg --encrypt --recipient <ID_EMAIL> <FILE> 
 
 # Decrypt file 
-: <FILE>; gpg --output <FILE_OUTPUT> --decrypt <FILE>
+: <ACTION_CMD> <FILE>; run <ACTION_CMD> gpg --output <FILE_OUTPUT> --decrypt <FILE>
 
 $ FILE: ls
-$ FILE_OUTPUT: echo ${FILE%.*} 
+$ FILE_OUTPUT: echo ${FILE%.*}
+$ FORMAT_EXPORT: echo 'ASCII,GPG' | tr ',' '\n'
+$ FORMAT: if [ $FORMAT_EXPORT = "ASCII" ]; then echo '--armor '; else echo ''; fi
+$ TYPE_KEY: echo 'SEC,SSB,PUB,SUB' | tr ',' '\n' 
+$ TYPE: if [ $TYPE_KEY = "SEC" ]; then echo '--export-secret-keys'; elif [ $TYPE_KEY = "SSB" ]; then echo '--export-secret-subkeys'; else echo '--export'; fi
+$ EXT: if [ $FORMAT_EXPORT = "ASCII" ]; then echo 'asc'; else echo 'gpg'; fi
+$ ACTION_CMD: echo "exec,view" | tr ',' '\n'
