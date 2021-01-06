@@ -1,0 +1,6 @@
+% h8mail, search, password
+
+# Rechercher par email
+run <TYPE> h8mail -t <TARGET>
+
+$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
