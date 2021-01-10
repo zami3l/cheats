@@ -1,0 +1,16 @@
+% tomb, encrypt, decrypt
+
+# Create volume
+tomb dig -s <SIZE> <NAME_TOMB>.tomb 2>/dev/null && tomb forge <NAME_TOMB>.key 2>/dev/null && tomb lock <NAME_TOMB>.tomb -k <NAME_TOMB>.key 2>/dev/null
+
+# Open volume
+tomb open <VOLUME_TOMB> -k <KEY_TOMB> 2>/dev/null
+
+# Close volume
+tomb close
+
+# List volume
+tomb list
+
+$ VOLUME_TOMB: ls
+$ KEY_TOMB: ls
