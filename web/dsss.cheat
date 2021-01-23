@@ -1,0 +1,6 @@
+% dsss, sql, injection, scanner
+
+# Scan get param
+run <ACTION_CMD> dsss -u "<URL>"
+
+$ ACTION_CMD: echo "exec,view" | tr ',' '\n'
