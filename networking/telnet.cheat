@@ -1,6 +1,6 @@
 % telnet, network
 
 # Connexion
-run <TYPE> telnet <IP> <PORT>
+run <ACTION_CMD> telnet <IP> <PORT>
 
-$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
+$ ACTION_CMD: echo "exec,view" | tr ',' '\n'

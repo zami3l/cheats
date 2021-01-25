@@ -1,6 +1,6 @@
 % netcat, nc, listen
 
 # Ecouter le port
-run <TYPE> nc -lvnp <PORT>
+run <ACTION_CMD> nc -lvnp <PORT>
 
-$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
+$ ACTION_CMD: echo "exec,view" | tr ',' '\n'

@@ -1,9 +1,9 @@
 % cronjobs, crontab, tools
 
 # Afficher les planifications via crontab
-run <TYPE> crontab -l
+run <ACTION_CMD> crontab -l
 
 # Afficher les planifications via conf
-run <TYPE> cat /etc/crontab
+run <ACTION_CMD> cat /etc/crontab
 
-$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
+$ ACTION_CMD: echo "exec,view" | tr ',' '\n'

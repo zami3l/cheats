@@ -1,12 +1,12 @@
 % enumeration, linux, scanner
 
 # Full énumération
-run <TYPE> enum4linux -A <IP>
+run <ACTION_CMD> enum4linux -A <IP>
 
 # Lister les partages
-run <TYPE> enum4linux -S <IP>
+run <ACTION_CMD> enum4linux -S <IP>
 
 # Lister les utilisateurs
-run <TYPE> enum4linux -U <IP>
+run <ACTION_CMD> enum4linux -U <IP>
 
-$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
+$ ACTION_CMD: echo "exec,view" | tr ',' '\n'

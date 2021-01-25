@@ -1,9 +1,9 @@
 % searchsploit, tools
 
 # Rechercher un exploit
-run <TYPE> searchsploit <NAME>
+run <ACTION_CMD> searchsploit <NAME>
 
 # Télécharger un exploit
-run <TYPE> searchsploit -m <ID>
+run <ACTION_CMD> searchsploit -m <ID>
 
-$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
+$ ACTION_CMD: echo "exec,view" | tr ',' '\n'

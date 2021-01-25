@@ -1,12 +1,12 @@
 % gtfo, search, app
 
 # Rechercher failles à partir d'un binaire
-: <TYPE_SYSTEM>; run <TYPE> gtfo <OPTION_SYSTEM> <BIN>
+: <TYPE_SYSTEM>; run <ACTION_CMD> gtfo <OPTION_SYSTEM> <BIN>
 
 # Lister les binaires disponibles
-: <TYPE_SYSTEM>; run <TYPE> gtfo -ls <LIST_SYSTEM>
+: <TYPE_SYSTEM>; run <ACTION_CMD> gtfo -ls <LIST_SYSTEM>
 
 $ TYPE_SYSTEM: echo 'LINUX,WINDOWS' | tr ',' '\n'
 $ OPTION_SYSTEM: if [ $TYPE_SYSTEM = "LINUX" ]; then echo '-b'; else echo '-e'; fi
 $ LIST_SYSTEM: if [ $TYPE_SYSTEM = "LINUX" ]; then echo 'bins'; else echo 'exe'; fi
-$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
+$ ACTION_CMD: echo "exec,view" | tr ',' '\n'

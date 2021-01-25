@@ -1,25 +1,25 @@
 % msfconsole, scanner, smtp
 
 # Donner la version du serveur smtp
-run <TYPE> msfconsole -qx "use auxiliary/scanner/smtp/smtp_version; set RHOSTS <IP>; set RPORT <PORT>; SET THREADS <NB_THREAD>; run;"
+run <ACTION_CMD> msfconsole -qx "use auxiliary/scanner/smtp/smtp_version; set RHOSTS <IP>; set RPORT <PORT>; SET THREADS <NB_THREAD>; run;"
 
 # Enumération smtp
-run <TYPE> msfconsole -qx "use auxiliary/scanner/smtp/smtp_enum; set RHOSTS <IP>; set RPORT <PORT>; set THREADS <NB_THREAD>; set USER_FILE <WORDLIST>; run;"
+run <ACTION_CMD> msfconsole -qx "use auxiliary/scanner/smtp/smtp_enum; set RHOSTS <IP>; set RPORT <PORT>; set THREADS <NB_THREAD>; set USER_FILE <WORDLIST>; run;"
 
 $ PORT: echo "25," | tr ',' '\n'
 $ NB_THREAD: echo "1,2,4,8,16" | tr ',' '\n'
 $ WORDLIST: $ ls ${pwd}/usr/share/wordlists/*
-$TYPE: echo "all,copy,view,exec" | tr ',' '\n'
+$ ACTION_CMD: echo "exec,view" | tr ',' '\n'
 
 % msfconsole, scanner, mysql
 @msfconsole, scanner, smtp
 
 # Retourner le schéma
-run <TYPE> msfconsole -qx "use auxiliary/scanner/mysql/mysql_schemadump; set USERNAME <LOGIN>; set PASSWORD <PASSWORD>; set RHOSTS <IP>; set RPORT <PORT>; set THREADS <NB_THREAD>; run;"
+run <ACTION_CMD> msfconsole -qx "use auxiliary/scanner/mysql/mysql_schemadump; set USERNAME <LOGIN>; set PASSWORD <PASSWORD>; set RHOSTS <IP>; set RPORT <PORT>; set THREADS <NB_THREAD>; run;"
 
 # Retourner les hashes
-run <TYPE> msfconsole -qx "use auxiliary/scanner/mysql/mysql_hashdump; set USERNAME <LOGIN>; set PASSWORD <PASSWORD>; set RHOSTS <IP>; set RPORT <PORT>; set THREADS <NB_THREAD>; run;"
+run <ACTION_CMD> msfconsole -qx "use auxiliary/scanner/mysql/mysql_hashdump; set USERNAME <LOGIN>; set PASSWORD <PASSWORD>; set RHOSTS <IP>; set RPORT <PORT>; set THREADS <NB_THREAD>; run;"
 
 $ PORT: echo "3306," | tr ',' '\n'
 $ NB_THREAD: echo "1,2,4,8,16" | tr ',' '\n'
-$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
+$ ACTION_CMD: echo "exec,view" | tr ',' '\n'

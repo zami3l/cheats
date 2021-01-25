@@ -1,37 +1,37 @@
 % meterpreter, help, cmd
 
 # Lister les processus
-run <TYPE> ps
+run <ACTION_CMD> ps
 
 # Migration d'une instance serveur vers un autre processus => migrate <PID>
-run <TYPE> migrate <PID>
+run <ACTION_CMD> migrate <PID>
 
 # Tuer un processus
-run <TYPE> kill <PID>
+run <ACTION_CMD> kill <PID>
 
 # Obtenir l'utilisateur actuel
-run <TYPE> getuid
+run <ACTION_CMD> getuid
 
 # Obtenir des informations sur le système
-run <TYPE> sysinfo
+run <ACTION_CMD> sysinfo
 
 # Obtenir la liste de routage
-run <TYPE> route
+run <ACTION_CMD> route
 
 # Lister les interfaces réseaux et leurs configurations
-run <TYPE> ipconfig
+run <ACTION_CMD> ipconfig
 
 # Obtenir le shell
-run <TYPE> shell
+run <ACTION_CMD> shell
 
 # Charger le module powershell
-run <TYPE> load powershell
+run <ACTION_CMD> load powershell
 
 # Démarrer powershell
-run <TYPE> powershell_shell
+run <ACTION_CMD> powershell_shell
 
 # Upload/Download fichier
-run <TYPE> upload/download <FILE> <FILE_OUTPUT>
+run <ACTION_CMD> upload/download <FILE> <FILE_OUTPUT>
 
 $ FILE: ls
-$ TYPE: run <TYPE> "all,copy,view,exec" | tr ',' '\n'
+$ ACTION_CMD: echo "exec,view" | tr ',' '\n'

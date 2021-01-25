@@ -1,9 +1,9 @@
 % mysql, databse
 
 # Connect database mysql
-run <TYPE> mysql -u <USER> -p
+run <ACTION_CMD> mysql -u <USER> -p
 
 # Show databases
-run <TYPE> mysql -u <USER> -p <PASSWORD> -e "show databses;"
+run <ACTION_CMD> mysql -u <USER> -p <PASSWORD> -e "show databses;"
 
-$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
+$ ACTION_CMD: echo "exec,view" | tr ',' '\n'

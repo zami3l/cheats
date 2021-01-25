@@ -1,17 +1,17 @@
 % tar, archive, gzip, gz, bzip, bz2, lzma, xz
 
 # View archive
-run <TYPE> tar -tvf <ARCHIVE>
+run <ACTION_CMD> tar -tvf <ARCHIVE>
 
 # Extract archive
-run <TYPE> tar -xvf <ARCHIVE>
+run <ACTION_CMD> tar -xvf <ARCHIVE>
 
 # Create archive
-: <TYPE_COMPRESSION>; run <TYPE> tar -<COMPRESSION>cvf <NAME_ARCHIVE><EXTENSION> <FILE>
+: <TYPE_COMPRESSION>; run <ACTION_CMD> tar -<COMPRESSION>cvf <NAME_ARCHIVE><EXTENSION> <FILE>
 
 $ ARCHIVE: ls
 $ FILE: ls
 $ TYPE_COMPRESSION: echo "gzip,bzip,lzma" | tr ',' '\n'
 $ COMPRESSION: if [ $TYPE_COMPRESSION = "gzip" ]; then echo 'z'; elif [ $TYPE_COMPRESSION = "bzip" ]; then echo 'j'; elif [ $TYPE_COMPRESSION = "lzma" ]; then echo 'J'; fi
 $ EXTENSION: if [ $TYPE_COMPRESSION = "gzip" ]; then echo '.gz'; elif [ $TYPE_COMPRESSION = "bzip" ]; then echo '.bz2'; elif [ $TYPE_COMPRESSION = "lzma" ]; then echo '.xz'; fi
-$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
+$ ACTION_CMD: echo "exec,view" | tr ',' '\n'

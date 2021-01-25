@@ -1,6 +1,6 @@
 % suid, search, privilege
 
 # Rechercher les fichiers SUID / SGID
-run <TYPE> find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2> /dev/null
+run <ACTION_CMD> find / -type f -a \( -perm -u+s -o -perm -g+s \) -exec ls -l {} \; 2> /dev/null
 
-$ TYPE: echo "all,copy,view,exec" | tr ',' '\n'
+$ ACTION_CMD: echo "exec,view" | tr ',' '\n'
