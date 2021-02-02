@@ -1,24 +1,24 @@
 % john, cracker
 
-# Extraire le hash d'une archive .zip
+# Extract archive hash .zip
 run <ACTION_CMD> zip2john <FILE> > <FILE>.hashes
 
-# Extraire le hash d'une archive .rar
+# Extract archive hash .rar
 run <ACTION_CMD> rar2john <FILE> > <FILE>.hashes
 
-# Extraire le hash d'un backup android .ab
+# Extract backup android hash .ab
 run <ACTION_CMD> androidbackup2john <FILE> > <FILE>.hashes
 
-# Extraire le hash d'une clé privée ssh
+# Extract private key hash ssh
 run <ACTION_CMD> ssh2john <FILE> > <FILE>.hashes
 
-# Extraire fichier /etc/passwd et /etc/shadow
+# Extract file /etc/passwd et /etc/shadow
 run <ACTION_CMD> unshadow <FILE_PASSWD> <FILE_SHADOW> > <FILE>.hashes
 
-# Utiliser l'attaque par dictionnaire
+# Use wordlist attack
 run <ACTION_CMD> john <FILE> --wordlist=<WORDLIST>
 
-# Remontrer le password trouvé
+# Show found password
 run <ACTION_CMD> john <FILE> --show
 
 $ FILE: ls

@@ -1,6 +1,6 @@
 % fcrackzip, cracker
 
-# Wordlist (-D Attaque par dictionnaire, -p Fichier pour l'attaque par dictionnaire)
+# Wordlist (-D Attack with wordlist, -p Select wordlist)
 run <ACTION_CMD> fcrackzip  -D  -p <WORDLIST> <FILE> -v 
 
 $ FILE: ls

@@ -3,7 +3,7 @@
 # Brute force ssh, smb, ftp, mysql, vnc, postgres, telnet
 : <TYPE_LOGIN> <TYPE_PASSWORD>; run <ACTION_CMD> hydra <OPTION_LOGIN> <LOGIN> <OPTION_PASSWORD> <PASSWORD> -t <NB_THREAD> -s <PORT> <IP> <PROTOCOL> -vV 
 
-# Brute force http https requête POST
+# Brute force http https request POST
 : <TYPE_LOGIN> <TYPE_PASSWORD>; run <ACTION_CMD> hydra <OPTION_LOGIN> <LOGIN> <OPTION_PASSWORD> <PASSWORD> <IP> http-post-form "<LOGIN_URL>:<USER_PARAM>=^USER^&<PASSWORD_PARAM>=^PASS^:F=<MESSAGE_FAIL>" -V
 
 $ TYPE_LOGIN: echo 'LOGIN,LIST LOGIN' | tr ',' '\n'

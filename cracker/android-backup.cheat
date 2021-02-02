@@ -1,6 +1,6 @@
 % android, cracker
 
-# Décompiler le backup
+# Decompile backup
 run <ACTION_CMD> abe unpack <FILE_BACKUP> <FILE_OUTPUT> <PASSWORD>
 
 $ FILE_BACKUP: ls
