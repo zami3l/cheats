@@ -7,7 +7,7 @@ $ ACTION_CMD: echo "exec,view" | tr ',' '\n'
 
 % postgresql, connexion
 
-# Connexion à PostgreSQL
+# Connect to PostgreSQL
 run <ACTION_CMD> sudo -iu postgres psql -h /data/postgresql
 
 $ ETAT: echo "start,stop,status" | tr ',' '\n'
