@@ -1,6 +1,6 @@
 % netcat, nc, listen
 
-# Ecouter le port
+# Listen port
 run <ACTION_CMD> nc -lvnp <PORT>
 
 $ ACTION_CMD: echo "exec,view" | tr ',' '\n'

@@ -1,9 +1,9 @@
 % smb, client, network
 
-# Connexion partage samba
+# Connect samba share
 run <ACTION_CMD> smbclient //<IP>/<PARTAGE> -U <LOGIN> -p <PORT>
 
-# Télécharger des fichiers dans le partage samba
+# Download files in samba share
 run <ACTION_CMD> smbget -R //<IP>/<PARTAGE> -U <LOGIN> -p <PORT>
 
 $ LOGIN: echo "Anonymous,Administrateur,Administrator,root,admin" | tr ',' '\n'

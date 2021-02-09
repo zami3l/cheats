@@ -1,6 +1,6 @@
 % telnet, network
 
-# Connexion
+# Connect telnet
 run <ACTION_CMD> telnet <IP> <PORT>
 
 $ ACTION_CMD: echo "exec,view" | tr ',' '\n'
