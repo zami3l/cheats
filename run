@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+######################################
+# run
+# Description : This script allows you to choose to run or view the commands selected by navi
+# Auteur: Zami3l
+######################################
+
+main () {
+
+    action="${1}"
+    cmd="${@:2}"
+
+    if [ ${action} = "view" ]; then
+        fView ${cmd}
+    elif [ ${action} = "exec" ]; then
+        fExec ${cmd}
+    fi
+
+}
+
+fView () {
+    echo ${@}
+}
+
+fExec () {
+    echo "--> ${@}" &&  eval ${@}
+}
+
+main ${@}
